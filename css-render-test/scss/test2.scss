@@ -1,0 +1,45 @@
+@mixin height {
+    height: 40px;
+}
+
+@mixin width {
+    width: 100px;
+}
+
+@mixin float {
+    float: left;
+}
+
+@mixin background {
+    background: #E9F4E9;
+}
+
+@mixin border {
+    border: 1px solid #dddddd;
+    border-radius: 5px 0 0 0;
+}
+@mixin margin {
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+@mixin shadow {
+    box-shadow: 10px 10px 5px #888888;
+}
+
+$t-num : 0;
+
+@for $t-num from 1 through 500 {
+
+    .t#{$t-num} {
+        @include height;
+        @include width;
+        @include float;
+        @include background;
+        @include border;
+        @include margin;
+        @include shadow;
+
+        height: 100px + $t-num/10;
+    }
+
+}

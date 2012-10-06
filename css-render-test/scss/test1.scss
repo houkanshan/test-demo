@@ -1,0 +1,47 @@
+%height {
+    height: 100px;
+}
+
+%width {
+    width: 100px;
+}
+
+%float {
+    float: left;
+}
+
+%background {
+    background: #E9F4E9;
+}
+
+%border {
+    border: 1px solid #dddddd;
+    border-radius: 5px 0 0 0;
+}
+
+%margin {
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+%shadow {
+    box-shadow: 10px 10px 5px #888888;
+}
+
+$t-num : 0;
+
+@for $t-num from 1 through 500 {
+
+    .t#{$t-num} {
+        @extend %height;
+        @extend %width;
+        @extend %float;
+        @extend %background;
+        @extend %border;
+        @extend %margin;
+        @extend %shadow;
+
+        height: 100px + $t-num/10;
+    }
+
+}
